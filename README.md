@@ -27,12 +27,13 @@ High level usecase requirements:
   * If scoring is successful “filename.scoreout” to be saved to S3 output folder. Each scored output file to be tagged with key details such as “model image”, “EKS cluster/namespace” and “Total duration of scoring”.
 * *Serverless:*
   * Leverage Lambda as REST API client receiving event notifications from S3. This function when triggered to manage launching K8S “scoring container” and scoring file and saving output back to a S3 folder.
-  * Leverage S3 as persistent storage for both input files and EC2 tags to carry process information.
-  * Use EC2 tags and NOT S3 object metadata – as metadata is part of file itself and any updates of metadata results in rewriting entire file. It is a performance issue.
+  * Delete pods once scoring is done to extend serverless approach. 
 * *Scalable and Distributed*
   * Each file to get a dedicated container. Scaling is done at file level with each file getting a designated container for scoring.
 
-![](https://github.com/nallagangus/sasmm_modops/blob/main/AWS-Scoring-Lambda-Approach.jpg&v=4&s=200)
+<p align="center">
+<img src="https://github.com/nallagangus/sasmm_modops/blob/main/AWS-Scoring-Lambda-Approach.jpg" align="right" width="500" height="500">
+</p>
 
 ### Workflow
 1. User drops a file into S3 bucket configured for event notifications
