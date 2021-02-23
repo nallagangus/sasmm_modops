@@ -4,7 +4,7 @@ This project contains prototype implementation of scoring data/files in S3 using
 
 This README describes the usecase background, architecture, pre-requisites for model container images/EKS and a user guide. It also discusses on how to extend for customer specific model container images. An Appendix refers to decisions made during implementation. 
 
-## Use case
+## Usecase
 
 As noted by a cloud provider (LINK) 90% of infrastructure costs come from scoring with only 10% from model development. So, it is important to keep “scoring” costs down and one way is taking on a serverless AWS Lambda approach with ondemand dynamic pods on AWS EKS.
 
@@ -32,7 +32,7 @@ High level usecase requirements:
 * *Scalable and Distributed*
   * Each file to get a dedicated container. Scaling is done at file level with each file getting a designated container for scoring.
 
-![Image of scoring](https://github.com/nallagangus/sasmm_modops/AWS-Scoring-Lambda-Approach.jpg)
+![](https://github.com/nallagangus/sasmm_modops/blob/main/AWS-Scoring-Lambda-Approach.jpg&v=4&s=200)
 
 ### Workflow
 1. User drops a file into S3 bucket configured for event notifications
