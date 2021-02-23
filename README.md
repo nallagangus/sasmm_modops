@@ -32,8 +32,7 @@ High level usecase requirements:
 * *Scalable and Distributed*
   * Each file to get a dedicated container. Scaling is done at file level with each file getting a designated container for scoring.
 
-![Image of scoring](https://octodex.github.com/images/yaktocat.png)
-
+![Image of scoring](https://github.com/nallagangus/sasmm_modops/AWS-Scoring-Lambda-Approach.jpg)
 
 ### Workflow
 1. User drops a file into S3 bucket configured for event notifications
@@ -44,3 +43,6 @@ High level usecase requirements:
 6. Makes a REST API call to Ingress Load Balancer which routes request to it’s specific POD
 7. POD which hosts “model” scores against the file and sends “scored output back” to Lambda
 8. Lambda gets file from POD and stores in S3 output bucket.
+
+
+
