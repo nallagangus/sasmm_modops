@@ -1,0 +1,9 @@
+# role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sas-model-deployers
+rules:
+- apiGroups: ["*"]
+  resources: ["nodes","configmaps","endpoints","pods","podtemplates","replicationcontrollers","secrets","services","daemonsets","deployments","replicasets","statefulsets","tokenreviews","horizontalpodautoscalers","cronjobs","jobs","daemonsets","deployments","ingresses","replicasets","ingresses"]
+  verbs: ["get","list","watch","create","delete","update","describe"]

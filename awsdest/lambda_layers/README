@@ -1,0 +1,17 @@
+
+lambda_function_layers.zip which holds all python packages used by lambda_function.
+
+Reason as to why layers are used over consolidating into main lambda_function_dependencies.zip.
+1. Layers is the right logical way to hold packages and dependencies that do not change over time.
+Code changes over time as part of lambda function is referred as part of "lambda function itself(another zip file)"
+2. Secondly, lambda function will be open for editing/debugging in "AWS console" if "lambda function < few MB".
+ If we are to hold all python packages as part of lamda function.zip then it is not open for editing all thhough we can stil use it.
+
+
+How do we create this
+
+1. cd to this "tmp" directory
+2. pip install <<wahtever pakcage like requests kubernetes etc>> -t /tmp/python/lib/python3.7/site-packages
+3. cd to /tmp
+4. zip entire directory from "python" and down into 1 file as lambda_layers/lambda_layers_k8s_requests_etc_packages_1.zip
+
